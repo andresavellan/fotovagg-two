@@ -1,0 +1,62 @@
+.search {
+  position: absolute;
+  z-index: 1;
+  bottom: 1rem;
+  width: 100%;
+  padding: 1rem 1.3rem; 
+  @media (min-width: 760px) {
+    bottom: calc(16vh - 3.6rem);
+  }
+  form {
+    display: flex;
+    justify-content: space-between;
+    height: 2.6rem;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 auto; 
+    @media (min-width: 760px) {
+      max-width: 640px;
+      height: 3.6rem;
+      -webkit-box-shadow: 9px -9px 24px -4px rgba(0,0,0,0.32); 
+      box-shadow: 9px -9px 24px -4px rgba(0,0,0,0.32);
+    }
+    input {
+      width: 100%;
+      height: 100%;
+      text-indent: 1rem; 
+      border: none;
+    }
+    button {
+      width: 33%; 
+      border: none;
+      background: $first;
+      svg {
+        font-size: ms(1);
+        color: $white; 
+      }
+    }
+  }
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}
+::-webkit-input-placeholder { /* Edge */
+  text-indent: 0.8rem; 
+  font-size: ms(1); 
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  text-indent: 0.8rem; 
+  font-size: ms(1); 
+}
+
+::placeholder {
+  text-indent: 0.8rem; 
+  font-size: ms(1); 
+}
+.inset-shadow {
+  -webkit-box-shadow: inset 13px 13px 7px -4px $black; 
+  -moz-box-shadow: inset 13px 13px 7px -4px $black; 
+  box-shadow: inset 13px 13px 7px -4px $black;
+}

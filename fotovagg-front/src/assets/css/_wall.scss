@@ -1,0 +1,97 @@
+ul.wall {
+  max-width: 90%;
+  opacity: 0;
+  margin: auto; 
+  padding: 1rem;
+  display: flex; 
+  flex-flow: row wrap;
+  justify-content: center; 
+  align-items: center; 
+
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-name: fadeInOpacity;
+
+  @media (min-width: 768px) {
+    max-width: 80%; 
+  }
+  @media (min-width: 1024px) {
+    max-width: 70%; 
+  }
+  @media (min-width: 1440px) {
+    max-width: 1024px; 
+  }
+
+  li.frame {  
+    opacity: 0;
+    background: $white;
+    background-image: linear-gradient(to bottom left, $second, $white);
+    padding: 1.3rem;
+    margin: 0.6rem; 
+    border: 4px solid $third; 
+    -webkit-box-shadow: 6px -4px 9px -8px $black; 
+    box-shadow: 6px -4px 9px -8px $black;
+  
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-name: fadeInOpacity;
+    @media (min-width: 320px) {
+      max-width: 40%; 
+    }
+    @media (min-width: 640px) {
+      max-width: 23%; 
+    }
+  }
+}
+
+.photo { 
+  opacity: 0;
+  animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-name: fadeInOpacity;
+}
+
+img[class*="img"] { 
+  max-width: 100%;
+  height: auto;
+
+  -webkit-box-shadow: inset 13px 13px 7px -4px $black; 
+  -moz-box-shadow: inset 13px 13px 7px -4px $black; 
+  box-shadow: inset 13px 13px 7px -4px $black;
+}
+
+.img-0 {
+  animation-delay: 0.6s;
+}
+.img-1 {
+  animation-delay: 0.9s;
+}
+.img-2 {
+  animation-delay: 1.2s;
+}
+.img-3 {
+  animation-delay: 1.5s;
+}
+.img-4 {
+  animation-delay: 1.8s;
+}
+.img-5 {
+  animation-delay: 2.1s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

@@ -1,0 +1,47 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover; 
+  opacity: 0;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-name: fadeInOpacity;
+  @media (min-width: 1440px) {
+    display: block; 
+    padding-top: 6rem; 
+  }
+  &.true {
+    background-color: $fourth; 
+    background-image: linear-gradient(to bottom left, $fourth, $fifth);
+  }
+  &.false {
+    background-color: $second; 
+    background-image: linear-gradient(to bottom left, $second, $white);
+  }
+  &::after{
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    background-image: url('./../img/bg-top-layer-2.png'); 
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain; 
+    z-index: 0;
+    @media (min-width: 540px) {
+      background-image: url('./../img/bg-top-layer.png'); 
+    }
+    @media (min-width: 1440px) {
+      background-image: url('./../img/bg-top-layer-lamp.png'); 
+      background-position: left 30% top;
+      background-size: 190px;
+    }
+  }
+}

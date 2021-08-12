@@ -1,0 +1,14 @@
+.loader {
+  background: $second;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  img {
+    max-width: 27%;
+    height: auto;
+    svg {
+      color: $third; 
+    }
+  }
+}
