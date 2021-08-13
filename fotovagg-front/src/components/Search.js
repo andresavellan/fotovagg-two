@@ -25,7 +25,7 @@ function Search() {
 
   return (
     <div className="search">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} action="/api" method="post">
         <input type="text" placeholder="Search photos..." ref={textInputRef} />
         <button type="submit"><FontAwesomeIcon icon={faSearch} /></button>
       </form>

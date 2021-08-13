@@ -1,5 +1,6 @@
 import React, { useEffect, useState, createContext, useRef } from 'react';
 import loader from './../assets/img/circles.svg'
+import axios from 'axios'
 
 export const FotovaggContext = createContext();
 
@@ -9,8 +10,6 @@ const FotovaggContextProvider = (props) => {
   const [render, setRender] = useState(false);
   //Refs
   const isLoadedRef = useRef(false);
-  const pageRef = useRef(1);
-  const searchTermRef = useRef('Semla');
   const totalPagesRef = useRef();
   const newPhotosRef = useRef([]);
   const timerRef = useRef();
@@ -84,11 +83,20 @@ const FotovaggContextProvider = (props) => {
 
   //search function from search component. Reset and ads new search term.
   const newSearch = (newSearchTerm) => {
+
     clearTimeout(timerRef.current);
     isLoadedRef.current = false;
-    pageRef.current = 1;
-    searchTermRef.current = newSearchTerm;
     setRender(render => !render);
+    
+    axios.post('/api', {
+      "filter": newSearchTerm
+      })
+    .then(res => {
+      console.log('this is the response', res)
+    })
+    .catch(error => {
+      console.log('heres is the errror', error)
+    })
   }
 
   if (error) {
@@ -103,7 +111,6 @@ const FotovaggContextProvider = (props) => {
     return (
       <FotovaggContext.Provider value={
         {
-          pageRef,
           newSearch,
           newPhotosRef,
           render
