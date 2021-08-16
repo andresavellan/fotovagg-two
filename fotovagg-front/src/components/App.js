@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import Search from './Search';
 import Wall from './Wall'
-import './../assets/css/main.scss';
+import './../assets/css/main.css';
 import { FotovaggContext } from './../context/FotovaggContext';
 
 function App() {
